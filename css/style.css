@@ -66,7 +66,20 @@ body { font: 400 16px/1.2 'Roboto Slab', serif; color: #324950; background: #fff
     padding: 20px 0;
 }
 
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 
+.card-link .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover .product-card {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
 .tomato-page-main {
     background-color: #fdf6f6;
 }
@@ -422,5 +435,194 @@ body { font: 400 16px/1.2 'Roboto Slab', serif; color: #324950; background: #fff
     }
     .prod-subtitle {
         font-size: 28px;
+    }
+}
+
+
+
+
+
+
+/* --- стилі для сторінки контакти --- */
+
+.contact-page-main {
+    background-color: #f9f9f9;
+}
+
+.contact-hero {
+    width: 100%;
+    height: 350px;
+    margin-top: 110px; 
+}
+
+.contact-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.contact-content {
+    padding: 50px 0;
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.form-columns {
+    display: flex;
+    gap: 40px;
+}
+
+.form-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: #57984c;
+}
+
+.textarea-group {
+    flex-grow: 1;
+}
+
+.input-group textarea {
+    height: 100%;
+    min-height: 250px;
+    resize: none;
+}
+
+.captcha-group {
+    margin-top: 10px;
+}
+
+.captcha-group label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 700;
+    display: block;
+}
+
+.captcha-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.captcha-code {
+    font-family: 'courier new', courier, monospace;
+    font-size: 18px;
+    font-style: italic;
+    color: #333;
+    padding: 0 10px;
+}
+
+.captcha-input {
+    width: 120px;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.captcha-input:focus {
+    border-color: #57984c;
+}
+
+.submit-btn {
+    background-color: #57984c;
+    color: #fff;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-left: auto; 
+}
+
+.submit-btn:hover {
+    background-color: #457a3c;
+}
+
+.address-block {
+    text-align: center;
+    padding: 40px 0 60px;
+    background-color: #fff; 
+}
+
+.address-title {
+    color: #57984c;
+    font-size: 18px;
+    margin-bottom: 25px;
+    display: inline-block;
+    padding: 10px 0;
+    border-top: 1px solid #d5e5d1;
+    border-bottom: 1px solid #d5e5d1;
+    font-weight: 700;
+}
+
+.address-text {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.address-text a {
+    color: #57984c;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+
+@media (max-width: 768px) {
+    .form-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .input-group textarea {
+        min-height: 150px;
+    }
+    .captcha-controls {
+        flex-wrap: wrap;
+    }
+    .submit-btn {
+        margin-left: 0;
+        width: 100%;
     }
 }
