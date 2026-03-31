@@ -3,183 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=320, initial-scale=1.0">
-    <title>Agridera Fresh Market Tomato Hybrids</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <title>наші соняшники - agridera</title>
+    <link href="https://fonts.googleapis.com/css2?family=roboto+slab:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/adaptive.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js" defer></script>
+    
+    <style>
+        /* пастельный фон под соняшник */
+        #app { background-color: #fffde6; min-height: 100vh; }
+        .product-card img { height: 200px; object-fit: cover; width: 100%; border-radius: 5px; }
+        /* небольшая правка для отображения меню, если стили завязаны на класс is-open */
+        .top-menu.is-open { display: flex !important; }
+    </style>
 </head>
 <body>
 
-    <header class="main-head inner-page-head">
-        <div class="wrapper head-flex">
-            <div class="brand-logo">
-                <a href="index.html">
-                    <img src="img/Logo.png" alt="Agridera Logo" height="50">
-                </a>
-            </div>
-            <div class="header-right head-controls">
-                <div class="search-field">
-                    <input type="text" placeholder="Search">
-                    <span class="find-icon"><i class="bi bi-search"></i></span>
-                </div>
-
-                <div class="burger-trigger" id="burger-btn">
-                    <i class="bi bi-list"></i>
-                </div>
-
-                <nav class="top-menu" id="mobile-nav">
-                    <div class="close-menu" id="close-btn">
-                        <i class="bi bi-x-lg"></i>
-                    </div>
-                    <a href="index.html">Home</a>
-                    <a href="tomato_all.html">Company Profile</a>
-                    <a href="tomat_one.html">Products</a>
-                    <a href="#">Services</a>
-                    <a href="#">R & D</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <main class="tomato-page-main">
-        <section class="page-banner">
-            <img src="img/page2/fon.png" alt="Tomatoes on vine">
-        </section>
-
-        <section class="page-content">
-            <div class="wrapper">
-                
-                <h1 class="page-title">Agridera Fresh Market Tomato Hybrids</h1>
-                <div class="stars-sep left-align">*****</div>
-
-                <div class="text-content">
-                    <p>Agridera aims to be one of the world's leading companies in the breeding, production, and marketing of tomato seeds. <strong>We invest intensively in research and development to provide solutions to growers and consumers in numerous countries around the world.</strong> In particular, we breed improved disease-resistant cultivars adapted to different markets globally.</p>
-                    <p>Currently, emphasis is placed on combining Tomato Yellow Leaf Curl Virus (TYLCV) and Tomato Spotted Wilt Virus (TSWV) resistances with other soil borne diseases into superior tomato breeding lines and hybrids.</p>
-                    <p>In terms of horticultural traits, breeding is for earliness, different fruit sizes, firmness, red fruit color, flavor, crack resistance, shelf life, and high/low temperature fruit set.</p>
-                </div>
-
-                <div class="highlight-block">
-                    <p>Agridera Tomato breeding programs are focusing on three main segments: Greenhouse Indeterminate Tomatoes, Open-field Indeterminate Tomatoes, and Bush Type Open-field Tomatoes.</p>
-                </div>
-
-                <div class="info-box">
-                    <div class="info-col">
-                        <h4>Greenhouse Tomato Breeding Program</h4>
-                        <hr>
-                        <p><strong>This breeding is aimed for the Spanish and Turkish markets.</strong> For single and cluster picks, round fruit shape and resistances of TYLCV, TSWV, Nematodes and FORL.</p>
-                    </div>
-                    <div class="info-col">
-                        <h4>Open-field Indeterminate Tomatoes</h4>
-                        <hr>
-                        <p><strong>This breeding is for Brazilian, Moroccan, and Turkish markets.</strong> The main focus is on large round shape fruits (200 grams plus); and resistances of TYLCV, TSWV, Nematodes and FORL.</p>
-                    </div>
-                    <div class="info-col">
-                        <h4>Open-field Bush Type Tomatoes</h4>
-                        <hr>
-                        <p><strong>This breeding is for Mediterranean markets.</strong> We breed round and elongated shapes, standard sizes (140-180 grams), and beef sizes (min. 180 grams up to 300 grams and more).</p>
-                    </div>
-                </div>
-
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="img/page2/Group1.png" alt="TAG 1000">
-                        <div class="product-info">
-                            <h5>TAG 1000 (TAG 853)</h5>
-                            <p>Tomato Determinate Red Standard Round</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="img/page2/Group2.png" alt="TAG 1001">
-                        <div class="product-info">
-                            <h5>TAG 1001 (TAG 855)</h5>
-                            <p>Tomato Determinate Red Standard Round</p>
-                        </div>
-                    </div>
-                    <a href="tomat_one.html" class="card-link">
-                        <div class="product-card">
-                            <img src="img/page2/Group3.png" alt="TAG 1002">
-                            <div class="product-info">
-                                <h5>TAG 1002 (TAG 809)</h5>
-                                <p>Tomato Determinate Red Standard Round</p>
-                            </div>
-                        </div>
+    <div id="app">
+        <header class="main-head inner-page-head">
+            <div class="wrapper head-flex">
+                <div class="brand-logo">
+                    <a href="index.html">
+                        <img src="img/Logo.png" alt="agridera logo" height="50">
                     </a>
-                    <div class="product-card">
-                        <img src="img/page2/Group4.png" alt="TAG 1003">
-                        <div class="product-info">
-                            <h5>TAG 1003 (TAG 834)</h5>
-                            <p>Tomato Determinate Red Standard Round</p>
-                        </div>
+                </div>
+                <div class="header-right head-controls">
+                    <div class="search-field">
+                        <input type="text" placeholder="search">
+                        <span class="find-icon"><i class="bi bi-search"></i></span>
                     </div>
-                    <div class="product-card">
-                        <img src="img/page2/Group5.png" alt="TAG 1004">
-                        <div class="product-info">
-                            <h5>TAG 1004 (TAG 848)</h5>
-                            <p>Tomato Determinate Red BEEF Round</p>
-                        </div>
+
+                    <div class="burger-trigger" id="burger-btn">
+                        <i class="bi bi-list"></i>
                     </div>
-                    <div class="product-card">
-                        <img src="img/page2/Group6.png" alt="TAG 1005">
-                        <div class="product-info">
-                            <h5>TAG 1005 (TAG 800)</h5>
-                            <p>Tomato Determinate Red Standard Round</p>
+
+                    <nav class="top-menu" id="mobile-nav">
+                        <div class="close-menu" id="close-btn">
+                            <i class="bi bi-x-lg"></i>
                         </div>
+                        <a href="index.html">home</a>
+                        <a href="tomato_all.html">company profile</a>
+                        <a href="tomato_all.html">products</a>
+                        <a href="#">services</a>
+                        <a href="#">r & d</a>
+                        <a href="contact.html">contact</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="tomato-page-main">
+            <section class="page-banner">
+                <img src="img/page2/fon.png" alt="sunflower banner">
+            </section>
+
+            <section class="page-content">
+                <div class="wrapper">
+                    <h1 class="page-title">наші свіжі соняшники</h1>
+                    <div class="stars-sep left-align">*****</div>
+
+                    <div class="text-content">
+                        <p>ми пропонуємо найкраще насіння соняшників, адаптованих до різних кліматичних зон.</p>
                     </div>
-                    <div class="product-card">
-                        <img src="img/page2/Group7.png" alt="TAG 1006">
-                        <div class="product-info">
-                            <h5>TAG 1006 (TAG 898)</h5>
-                            <p>Tomato Determinate Red Elongated</p>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <img src="img/page2/Group8.png" alt="TAG 1007">
-                        <div class="product-info">
-                            <h5>TAG 1007 (TAG 816)</h5>
-                            <p>Tomato Determinate Red Elongated</p>
+
+                    <div class="product-grid">
+                        <div class="product-card" v-for="p in products" :key="p.id">
+                            <a :href="'tomat_one.html#' + p.id" style="text-decoration: none; color: inherit;">
+                                <img :src="p.image" :alt="p.title">
+                                <div class="product-info">
+                                    <h5>{{ p.title }}</h5>
+                                    <p>{{ p.short_text }}</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </section>
+        </main>
 
+        <footer class="base-footer">
+            <div class="wrapper footer-wrap">
+                <nav class="footer-links">
+                    <a href="#">profile</a>
+                    <a href="#">management</a>
+                    <a href="#">products</a>
+                    <a href="#">r&d</a>
+                    <a href="#">links</a>
+                    <a href="#">sitemap</a>
+                    <a href="contact.html">contact</a>
+                </nav>
+                <div class="social-icons">
+                    <a href="#" class="icon-circle"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="icon-circle"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="icon-circle"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="icon-circle"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="icon-circle"><i class="bi bi-facebook"></i></a>
+                </div>
             </div>
-        </section>
-    </main>
+            <div class="copyright-line">agridera seeds & agriculture ltd. © 2026</div>
+        </footer>
+    </div> <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerBtn = document.getElementById('burger-btn');
+            const closeBtn = document.getElementById('close-btn');
+            const mobileNav = document.getElementById('mobile-nav');
 
-    <footer class="base-footer">
-        <div class="wrapper footer-wrap">
-            <nav class="footer-links">
-                <a href="#">PROFILE</a>
-                <a href="#">MANAGEMENT</a>
-                <a href="#">PRODUCTS</a>
-                <a href="#">R&D</a>
-                <a href="#">LINKS</a>
-                <a href="#">SITEMAP</a>
-                <a href="contact.html">CONTACT</a>
-            </nav>
-            <div class="social-icons">
-                <a href="#" class="icon-circle"><i class="bi bi-linkedin"></i></a>
-                <a href="#" class="icon-circle"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="icon-circle"><i class="bi bi-youtube"></i></a>
-                <a href="#" class="icon-circle"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="icon-circle"><i class="bi bi-facebook"></i></a>
-            </div>
-        </div>
-        <div class="copyright-line">AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</div>
-    </footer>
+            if (burgerBtn && mobileNav) {
+                burgerBtn.addEventListener('click', function() {
+                    mobileNav.classList.add('is-open');
+                });
+            }
 
-    <script>
-        const burgerBtn = document.getElementById('burger-btn');
-        const closeBtn = document.getElementById('close-btn');
-        const mobileNav = document.getElementById('mobile-nav');
-
-        burgerBtn.addEventListener('click', () => {
-            mobileNav.classList.add('is-open');
-        });
-
-        closeBtn.addEventListener('click', () => {
-            mobileNav.classList.remove('is-open');
+            if (closeBtn && mobileNav) {
+                closeBtn.addEventListener('click', function() {
+                    mobileNav.classList.remove('is-open');
+                });
+            }
         });
     </script>
 
