@@ -9,15 +9,29 @@ var app = new Vue({
             {id: 5, title: 'соняшник декоративний', short_text: 'для саду та краси', image: 'img/son/w5.jpg', desc: 'низькорослий сорт з яскравими квітками. використовується для ландшафтного дизайну.'}
         ],
         product: {},
-        btnvisible: 0 
+        btnVisible: 0,
+        cart: [],
+        contactFields: {
+            name: '',
+            company: '',
+            position: '',
+            city: '',
+            country: '',
+            phone: '',
+            email: '',
+            role: 'seed producer',
+            specify: '',
+            interest: ''
+        },
+        orderSubmitted: false 
     },
     mounted: function() {
-        this.getproduct();
-        this.checkincart();
+        this.getProduct();
+        this.checkInCart();
+        this.getCart(); 
     },
     methods: {
-
-        getproduct: function() {
+        getProduct: function() {
             var id = window.location.hash.replace('#', '');
             if (this.products && this.products.length > 0) {
                 for (var i in this.products) {
@@ -28,25 +42,58 @@ var app = new Vue({
             }
         },
 
-        addtocart: function(id) {
+        addToCart: function(id) {
             var cart = [];
-            if (window.localstorage.getitem('cart')) {
-                cart = window.localstorage.getitem('cart').split(',');
+            if (window.localStorage.getItem('cart')) {
+                cart = window.localStorage.getItem('cart').split(',');
             }
-            if (cart.indexof(string(id)) == -1) {
+            if (cart.indexOf(String(id)) == -1) {
                 cart.push(id);
-                window.localstorage.setitem('cart', cart.join(','));
-                this.btnvisible = 1;
+                window.localStorage.setItem('cart', cart.join(','));
+                this.btnVisible = 1;
             }
         },
 
-        checkincart: function() {
-            if (this.product && this.product.id && window.localstorage.getitem('cart')) {
-                var cart = window.localstorage.getitem('cart').split(',');
-                if (cart.indexof(string(this.product.id)) != -1) {
-                    this.btnvisible = 1;
+        checkInCart: function() {
+            if (this.product && this.product.id && window.localStorage.getItem('cart')) {
+                var cart = window.localStorage.getItem('cart').split(',');
+                if (cart.indexOf(String(this.product.id)) != -1) {
+                    this.btnVisible = 1;
                 }
             }
+        },
+
+        getCart: function() {
+            this.cart = []; 
+            if (window.localStorage.getItem('cart')) {
+                var savedIds = window.localStorage.getItem('cart').split(',');
+                for (var i = 0; i < savedIds.length; i++) {
+                    for (var j = 0; j < this.products.length; j++) {
+                        if (this.products[j].id == savedIds[i]) {
+                            this.cart.push(this.products[j]);
+                        }
+                    }
+                }
+            }
+        },
+
+        removeFromCart: function(id) {
+
+            this.cart = this.cart.filter(item => item.id != id);
+            
+
+            var updatedIds = this.cart.map(item => item.id);
+            if (updatedIds.length > 0) {
+                window.localStorage.setItem('cart', updatedIds.join(','));
+            } else {
+                window.localStorage.removeItem('cart');
+            }
+        },
+
+        makeOrder: function() {
+            this.orderSubmitted = true; 
+            this.cart = []; 
+            window.localStorage.removeItem('cart'); 
         }
     }
 });
